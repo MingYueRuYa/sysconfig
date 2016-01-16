@@ -4,5 +4,5 @@
 --sudo add-apt-repository ppa:costales/anoise
 --sudo apt-get update && sudo apt-get install anoise
 安装自定义声音
---sudo apt-get install anoise-community-extensinal
+--sudo apt-get install anoise-community-extensina1
 ************************************************
