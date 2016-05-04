@@ -3,6 +3,8 @@ filetype off                   " required!
 set ts=4
 set hlsearch
 set shiftwidth=4 
+set incsearch
+highlight Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -78,3 +80,7 @@ let OmniCpp_MayCompleteDot = 1
 let OmniCpp_MayCompleteArrow = 1
 let OmniCpp_MayCompleteScope = 0
 let OmniCpp_SelectFirstItem = 0
+
+
+"set enconding
+set fileencodings=utf-8,gb2312,gbk
