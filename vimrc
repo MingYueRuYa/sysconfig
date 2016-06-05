@@ -7,7 +7,7 @@ set incsearch
 highlight Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+ call vundle#rc()
  
 " let Vundle manage Vundle
 " required!
@@ -32,6 +32,8 @@ Bundle 'git://github.com/vim-scripts/taglist.vim.git'
 Bundle 'winmanager'
 Bundle 'minibufexpl.vim'
 Bundle 'OmniCppComplete'
+Bundle 'Tagbar'
+Bundle 'git://github.com/majutsushi/tagbar.git'
 " ...
  
 filetype plugin indent on     " required!
@@ -59,10 +61,10 @@ set encoding=utf8
 
 "taglist configure
 "let Tlist_Show_One_File=1    "只显示当前文件的tags
-let Tlist_WinWidth=40        "设置taglist宽度
+let Tlist_WinWidth=20        "设置taglist宽度
 let Tlist_Exit_OnlyWindow=1  "tagList窗口是最后一个窗口，则退出Vim
 let Tlist_Use_Right_Window=1 "在Vim窗口右侧显示taglist窗口
-let Tlist_Auto_Open=1				 "auto open 
+let Tlist_Auto_Open=0				 "auto open 
 let Tlist_Use_SingleClick=1  
 "taglist configure
 
@@ -81,6 +83,8 @@ let OmniCpp_MayCompleteArrow = 1
 let OmniCpp_MayCompleteScope = 0
 let OmniCpp_SelectFirstItem = 0
 
-
+"tagbar configure
+autocmd BufEnter * nested :call tagbar#autoopen(0)
+let g:tagbar_sort = 0
 "set enconding
 set fileencodings=utf-8,gb2312,gbk
