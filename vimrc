@@ -34,6 +34,9 @@ Bundle 'minibufexpl.vim'
 Bundle 'OmniCppComplete'
 Bundle 'Tagbar'
 Bundle 'git://github.com/majutsushi/tagbar.git'
+Bundle 'vim-addon-commenting'
+Bundle 'a.vim'
+Bundle 'c-standard-functions-highlight'
 " ...
  
 filetype plugin indent on     " required!
@@ -86,5 +89,12 @@ let OmniCpp_SelectFirstItem = 0
 "tagbar configure
 autocmd BufEnter * nested :call tagbar#autoopen(0)
 let g:tagbar_sort = 0
+let g:tagbar_width=20
+
+"NERDTree configure
+let NERDTreeWinSize = 20
+let NERDTreeIgnore=['\.o$', '\~$', 'tags', 'Makefile']
+autocmd vimenter * NERDTree
+
 "set enconding
 set fileencodings=utf-8,gb2312,gbk
