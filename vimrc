@@ -4,7 +4,11 @@ set ts=4
 set hlsearch
 set shiftwidth=4 
 set incsearch
+set mouse=a
+
 highlight Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
+highlight Comment term=bold ctermfg=10 guifg=#80a0ff
+
 
 set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
@@ -93,7 +97,8 @@ let g:tagbar_width=20
 
 "NERDTree configure
 let NERDTreeWinSize = 20
-let NERDTreeIgnore=['\.o$', '\~$', 'tags', 'Makefile']
+let NERDTreeRespectWildIgnore=1
+let NERDTreeIgnore=['\.o$', '\~$', 'tags', 'Makefile', '\.out$']
 autocmd vimenter * NERDTree
 
 "set enconding
