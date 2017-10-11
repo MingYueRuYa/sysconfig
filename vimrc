@@ -10,7 +10,7 @@ highlight Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 highlight Comment term=bold ctermfg=10 guifg=#80a0ff
 
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#rc()
  
 " let Vundle manage Vundle
