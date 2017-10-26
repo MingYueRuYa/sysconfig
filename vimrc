@@ -5,10 +5,21 @@ set hlsearch
 set shiftwidth=4 
 set incsearch
 set mouse=a
+set cc=80   " 设置标尺，高亮显示第80列
 
-highlight Search term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
-highlight Comment term=bold ctermfg=10 guifg=#80a0ff
+an BufWinLeave * silent mkview		" 离开时自动保存折叠
+an BufWinEnter * silent loadview 	" 进入自动打开折叠
 
+"config solarized theme
+"syntax enable
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+
+highlight Search term=standout ctermfg=black ctermbg=11 guifg=Black guibg=Yellow
+"highlight Comment term=bold ctermfg=10 guifg=#80a0ff
+"设置高亮显示的颜色
+highlight ColorColumn ctermbg=red  guibg=lightblue
 
 set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#rc()
@@ -41,6 +52,9 @@ Bundle 'git://github.com/majutsushi/tagbar.git'
 Bundle 'vim-addon-commenting'
 Bundle 'a.vim'
 Bundle 'c-standard-functions-highlight'
+"Bundle 'Sessions'
+Bundle 'sessions'
+"Bundle 'supertab'
 " ...
  
 filetype plugin indent on     " required!
@@ -67,8 +81,8 @@ set encoding=utf8
 "powerline configure
 
 "taglist configure
-"let Tlist_Show_One_File=1    "只显示当前文件的tags
-let Tlist_WinWidth=20        "设置taglist宽度
+let Tlist_Show_One_File=1    "只显示当前文件的tags
+let Tlist_WinWidth=40        "设置taglist宽度
 let Tlist_Exit_OnlyWindow=1  "tagList窗口是最后一个窗口，则退出Vim
 let Tlist_Use_Right_Window=1 "在Vim窗口右侧显示taglist窗口
 let Tlist_Auto_Open=0				 "auto open 
@@ -93,12 +107,12 @@ let OmniCpp_SelectFirstItem = 0
 "tagbar configure
 autocmd BufEnter * nested :call tagbar#autoopen(0)
 let g:tagbar_sort = 0
-let g:tagbar_width=20
+let g:tagbar_width=40
 
 "NERDTree configure
-let NERDTreeWinSize = 20
+let NERDTreeWinSize = 40
 let NERDTreeRespectWildIgnore=1
-let NERDTreeIgnore=['\.o$', '\~$', 'tags', 'Makefile', '\.out$']
+let NERDTreeIgnore=['\.o$', '\~$', 'tags', '\.out$']
 autocmd vimenter * NERDTree
 
 "set enconding
