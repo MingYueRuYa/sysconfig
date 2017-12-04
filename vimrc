@@ -2,13 +2,15 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 set ts=4
 set hlsearch
+set expandtab				   " 使用空格代替tab
+set tabstop=4				   " tab键缩进4个空格
 set shiftwidth=4 
 set incsearch
 set mouse=a
 set cc=80   " 设置标尺，高亮显示第80列
 
-an BufWinLeave * silent mkview		" 离开时自动保存折叠
-an BufWinEnter * silent loadview 	" 进入自动打开折叠
+"an BufWinLeave * silent mkview
+"an BufWinEnter * silent loadview
 
 "config solarized theme
 "syntax enable
@@ -107,13 +109,16 @@ let OmniCpp_SelectFirstItem = 0
 "tagbar configure
 autocmd BufEnter * nested :call tagbar#autoopen(0)
 let g:tagbar_sort = 0
-let g:tagbar_width=40
+let g:tagbar_width=20
 
 "NERDTree configure
-let NERDTreeWinSize = 40
+let NERDTreeWinSize = 20
 let NERDTreeRespectWildIgnore=1
 let NERDTreeIgnore=['\.o$', '\~$', 'tags', '\.out$']
 autocmd vimenter * NERDTree
 
 "set enconding
 set fileencodings=utf-8,gb2312,gbk
+
+" map F5 auto compile
+map <F5> :make!<CR><CR><CR> :botright copen<CR><CR>
