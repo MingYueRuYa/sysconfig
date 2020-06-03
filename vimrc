@@ -1,3 +1,4 @@
+set number
 set nocompatible               " be iMproved
 filetype off                   " required!
 set ts=4
@@ -8,6 +9,28 @@ set shiftwidth=4
 set incsearch
 set mouse=a
 set cc=80   " 设置标尺，高亮显示第80列
+syntax on	" 打开语法
+set showcmd	" 显示命令行
+set encoding=utf-8  
+set t_Co=256
+filetype indent on
+set textwidth=80
+" set relativenumber	" 显示对应的行号
+set ignorecase
+set nobackup
+set noswapfile
+set undofile
+set backupdir=~/.vim/.backup//  
+set directory=~/.vim/.swp//
+set undodir=~/.vim/.undo// 
+set autochdir
+set visualbell
+set autoread
+set listchars=tab:»■,trail:■	" 显示多余的空格
+set list
+set wildmenu
+set wildmode=longest:list,full	" 命令模式下，Tab自动补全
+
 
 "an BufWinLeave * silent mkview
 "an BufWinEnter * silent loadview
